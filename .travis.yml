@@ -1,16 +1,22 @@
 language: node_js
 
 node_js: node
+os: linux
 
 install: yarn
 cache: yarn
 
 before_script: skip
-
-script: yarn test
+script: skip
 
 jobs:
   include:
+    - stage: test
+      name: Test
+
+      script:
+        - yarn test
+
     - stage: coverage
       name: Coverage
 
