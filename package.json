@@ -1,12 +1,12 @@
 {
   "name": "jsonc-pragma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple, yet powerful pragma analyzer and utility library for JSON with Comments",
   "main": "dist/main.js",
   "license": "MIT",
   "scripts": {
-    "build": "run clean && parcel build src/main.ts --target=node && yarn types",
-    "watch": "run clean && parcel src/main.ts --target=node",
+    "build": "run clean && parcel build src/main.ts --target=node --bundle-node-modules && yarn types",
+    "watch": "run clean && parcel src/main.ts --target=node --bundle-node-modules",
     "clean": "shx rm -rf dist",
     "types": "tsc -p . -m amd --out types/main.js && shx cp types/main.d.ts dist && shx rm -rf types && node scripts/postprocess.js",
     "test": "jest"
