@@ -1,0 +1,35 @@
+language: node_js
+
+node_js: node
+
+install: yarn
+cache: yarn
+
+before_script: skip
+
+script: yarn test
+
+jobs:
+  include:
+    - stage: coverage
+      name: Coverage
+
+      script:
+        - yarn test --coverage
+        - yarn codecov
+
+    - stage: deploy
+      name: Deploy
+
+      if: tag IS present
+
+      script: yarn build
+
+      deploy:
+        - provider: npm
+          email: $NPM_EMAIL
+          api_key: $NPM_TOKEN
+          edge: true
+          on:
+            branch: master
+            tags: true

@@ -1,0 +1,40 @@
+{
+  "name": "jsonc-pragma",
+  "version": "1.0.0",
+  "description": "A simple, yet powerful pragma analyzer and utility library for JSON with Comments",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "run clean && parcel build src/main.ts --target=node && yarn types",
+    "watch": "run clean && parcel src/main.ts --target=node",
+    "clean": "shx rm -rf dist",
+    "types": "tsc -p . -m amd --out types/main.js && shx cp types/main.d.ts dist && shx rm -rf types && node scripts/postprocess.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.7",
+    "codecov": "^3.6.1",
+    "jest": "^24.9.0",
+    "parcel": "^1.12.4",
+    "prettier": "^1.19.1",
+    "run-script-proxy": "^1.0.1",
+    "shx": "^0.3.2",
+    "ts-jest": "^24.3.0",
+    "tslib": "^1.10.0",
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.4"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^~/(.*)": "<rootDir>/src/$1"
+    }
+  },
+  "dependencies": {
+    "match-bracket": "^1.0.0"
+  }
+}

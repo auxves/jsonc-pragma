@@ -1,0 +1,17 @@
+# Folders
+
+.cache
+.vscode
+node_modules
+src
+scripts
+
+# Files
+
+*.log
+.prettierrc
+.gitignore
+.travis.yml
+tsconfig.json
+tslint.json
+yarn.lock
