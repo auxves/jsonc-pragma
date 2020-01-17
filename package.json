@@ -11,6 +11,9 @@
     "types": "tsc -p . -m amd --out types/main.js && shx cp types/main.d.ts dist && shx rm -rf types && node scripts/postprocess.js",
     "test": "jest"
   },
+  "dependencies": {
+    "match-bracket": "^1.0.0"
+  },
   "devDependencies": {
     "@types/jest": "^24.9.0",
     "@types/node": "^13.1.7",
@@ -27,14 +30,15 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.4"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnohovhannisyan/jsonc-pragma"
+  },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
     "moduleNameMapper": {
       "^~/(.*)": "<rootDir>/src/$1"
     }
-  },
-  "dependencies": {
-    "match-bracket": "^1.0.0"
   }
 }
