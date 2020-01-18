@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.2
+
+- Use microbundle
+
 ## v1.0.1
 
 - Bundle dependencies

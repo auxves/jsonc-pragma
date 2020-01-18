@@ -9,11 +9,12 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["esnext"],
     "target": "es2015",
-    "module": "commonjs",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "declaration": true,
-    "strict": true
+    "declaration": false,
+    "strict": true,
+    "outDir": "dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/__mocks__", "src/**/*.test.ts"]
 }
