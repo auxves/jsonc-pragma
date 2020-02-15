@@ -93,9 +93,13 @@ This is the contents of the JSON document.
 
 #### `@param` selector
 
+**OPTIONAL**
+
 Type: `(section: ISection) => boolean`
 
 This is a function that receives a section and determines whether that section should be commented by returning true (comment) or false (don't comment).
+
+If omitted, all sections will be commented.
 
 #### `@example`
 
@@ -150,9 +154,13 @@ This is the contents of the JSON document.
 
 #### `@param` selector
 
+**OPTIONAL**
+
 Type: `(section: ISection) => boolean`
 
 This is a function that receives a section and determines whether that section should be uncommented by returning true (uncomment) or false (don't uncomment).
+
+If omitted, all sections will be uncommented.
 
 #### `@example`
 
