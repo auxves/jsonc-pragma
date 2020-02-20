@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.3
+
+- Upgrade `codecov` to fix security vulnerability
+
 ## v1.0.2
 
 - Use microbundle
