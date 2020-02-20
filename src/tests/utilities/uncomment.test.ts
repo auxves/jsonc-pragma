@@ -177,3 +177,25 @@ test("object in array", () => {
 
   expect(output).toBe(expected);
 });
+
+test("partially uncommented", () => {
+  const input = `{
+    // @foo bar=5
+    // "key": true,
+
+    // @foo bar=6
+    "key2": false
+  }`;
+
+  const expected = `{
+    // @foo bar=5
+    "key": true,
+
+    // @foo bar=6
+    "key2": false
+  }`;
+
+  const output = uncomment(input);
+
+  expect(output).toBe(expected);
+});

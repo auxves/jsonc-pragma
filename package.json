@@ -1,6 +1,6 @@
 {
   "name": "jsonc-pragma",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple, yet powerful pragma analyzer and utility library for JSON with Comments",
   "main": "dist/main.js",
   "source": "src/main.ts",

@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4
+
+- Fix issue with `comment` where a line would be commented twice
+
 ## v1.0.3
 
 - Upgrade `codecov` to fix security vulnerability

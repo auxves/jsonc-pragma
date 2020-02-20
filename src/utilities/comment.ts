@@ -17,6 +17,8 @@ export function comment(
 
   return lines
     .map((line, i) => {
+      if (line.trimStart().startsWith("//")) return line;
+
       const section = sectionsToComment.find(s => i >= s.start && i <= s.end);
 
       if (section) {
