@@ -24,7 +24,7 @@ function isRegular(line: string) {
  * @param contents The contents of your JSON file
  */
 export function scan(contents: string | Buffer): ISection[] {
-  const pragmaRegex = /\s*\/\/\s@(?<name>\w+)(\s(?<args>.*))?$/;
+  const pragmaRegex = /\s*\/\/\s@(?<name>[a-zA-Z0-9]+)(\s(?<args>.*))?$/;
 
   const lines = contents.toString().split("\n");
 

@@ -11,9 +11,7 @@ test("basic functionality", () => {
     "key": true
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("multiple pragmas", () => {
@@ -33,9 +31,7 @@ test("multiple pragmas", () => {
     "key": true
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("selectors", () => {
@@ -55,9 +51,9 @@ test("selectors", () => {
     "key": true
   }`;
 
-  const output = uncomment(input, section => Number(section.args.bar) > 5);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input, section => Number(section.args.bar) > 5)).toBe(
+    expected
+  );
 });
 
 test("objects", () => {
@@ -75,9 +71,7 @@ test("objects", () => {
     }
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("arrays", () => {
@@ -95,9 +89,7 @@ test("arrays", () => {
     ]
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("nested objects", () => {
@@ -119,9 +111,7 @@ test("nested objects", () => {
     }
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("nested arrays", () => {
@@ -143,9 +133,7 @@ test("nested arrays", () => {
     ]
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("object in array", () => {
@@ -173,9 +161,7 @@ test("object in array", () => {
     ]
   }`;
 
-  const output = uncomment(input);
-
-  expect(output).toBe(expected);
+  expect(uncomment(input)).toBe(expected);
 });
 
 test("partially uncommented", () => {
@@ -195,7 +181,77 @@ test("partially uncommented", () => {
     "key2": false
   }`;
 
-  const output = uncomment(input);
+  expect(uncomment(input)).toBe(expected);
+});
 
-  expect(output).toBe(expected);
+test("4-space indentation", () => {
+  const input = `{
+      // @foo bar=5
+      // "key": true,
+
+      // @foo bar=6
+      // "key2": [
+      //   { "key": true }
+      // ]
+  }`;
+
+  const expected = `{
+      // @foo bar=5
+      "key": true,
+
+      // @foo bar=6
+      "key2": [
+        { "key": true }
+      ]
+  }`;
+
+  expect(uncomment(input)).toBe(expected);
+});
+
+test("mixed indentation", () => {
+  const input = `{
+    // @foo bar=5
+    // "key": true,
+
+       // @foo bar=6
+       // "key2": [
+       //   { "key": true }
+       // ]
+  }`;
+
+  const expected = `{
+    // @foo bar=5
+    "key": true,
+
+       // @foo bar=6
+       "key2": [
+         { "key": true }
+       ]
+  }`;
+
+  expect(uncomment(input)).toBe(expected);
+});
+
+test("no indentation", () => {
+  const input = `{
+// @foo bar=5
+// "key": true,
+
+// @foo bar=6
+// "key2": [
+//   { "key": true }
+// ]
+}`;
+
+  const expected = `{
+// @foo bar=5
+"key": true,
+
+// @foo bar=6
+"key2": [
+  { "key": true }
+]
+}`;
+
+  expect(uncomment(input)).toBe(expected);
 });
