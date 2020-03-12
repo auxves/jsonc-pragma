@@ -1,21 +1,21 @@
 <div align="center">
-  <!-- <img width="200" src="assets/logo.png"> -->
-  <h1>jsonc-pragma</h1>
-  <p>A simple, yet powerful pragma analyzer and utility library for JSON with Comments</p>
-  <p>
-    <a href="https://travis-ci.com/arnohovhannisyan/jsonc-pragma">
-      <img src="https://img.shields.io/travis/com/arnohovhannisyan/jsonc-pragma" alt="Travis">
-    </a>
-    <a href="https://npmjs.com/package/jsonc-pragma">
-      <img src="https://img.shields.io/npm/v/jsonc-pragma" alt="Version">
-    </a>
-    <a href="https://github.com/arnohovhannisyan/jsonc-pragma/blob/master/LICENSE">
-      <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
-    </a>
-    <a href="https://codecov.io/gh/arnohovhannisyan/jsonc-pragma">
-      <img src="https://img.shields.io/codecov/c/github/arnohovhannisyan/jsonc-pragma" alt="Coverage">
-    </a>
-  </p>
+	<!-- <img width="200" src="assets/logo.png"> -->
+	<h1>jsonc-pragma</h1>
+	<p>A simple, yet powerful pragma analyzer and utility library for JSON with Comments</p>
+	<p>
+		<a href="https://travis-ci.com/arnohovhannisyan/jsonc-pragma">
+			<img src="https://img.shields.io/travis/com/arnohovhannisyan/jsonc-pragma" alt="Travis">
+		</a>
+		<a href="https://npmjs.com/package/jsonc-pragma">
+			<img src="https://img.shields.io/npm/v/jsonc-pragma" alt="Version">
+		</a>
+		<a href="https://github.com/arnohovhannisyan/jsonc-pragma/blob/master/LICENSE">
+			<img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+		</a>
+		<a href="https://codecov.io/gh/arnohovhannisyan/jsonc-pragma">
+			<img src="https://img.shields.io/codecov/c/github/arnohovhannisyan/jsonc-pragma" alt="Coverage">
+		</a>
+	</p>
 </div>
 
 ## Installation
@@ -46,13 +46,13 @@ This is the contents of the JSON document.
 import { scan } from "jsonc-pragma";
 
 const contents = `{
-  // @foo bar=5
-  "example": "...",
+	// @foo bar=5
+	"example": "...",
 
-  // @baz foo=test bar=abc
-  "object": {
-    "example": "..."
-  }
+	// @baz foo=test bar=abc
+	"object": {
+		"example": "..."
+	}
 }`;
 
 scan(contents);
@@ -60,18 +60,18 @@ scan(contents);
 /* Returns:
 
 [
-  {
-    start: 2,
-    end: 2,
-    args: { bar: "5" },
-    name: "foo"
-  },
-  {
-    start: 5,
-    end: 7,
-    args: { foo: "test", bar: "abc" },
-    name: "baz"
-  }
+	{
+		start: 2,
+		end: 2,
+		args: { bar: "5" },
+		name: "foo"
+	},
+	{
+		start: 5,
+		end: 7,
+		args: { foo: "test", bar: "abc" },
+		name: "baz"
+	}
 ] 
 
 */
@@ -107,36 +107,36 @@ If omitted, all sections will be commented.
 import { comment } from "jsonc-pragma";
 
 const contents = `{
-  // @foo bar=5
-  "example": "...",
+	// @foo bar=5
+	"example": "...",
 
-  // @foo bar=7
-  "object": {
-    "example": "..."
-  },
+	// @foo bar=7
+	"object": {
+		"example": "..."
+	},
 
-  // @baz bar=7
-  "notCommented": "..."
+	// @baz bar=7
+	"notCommented": "..."
 }`;
 
 comment(
-  contents,
-  section => section.name === "foo" && Number(section.args.bar) > 6
+	contents,
+	section => section.name === "foo" && Number(section.args.bar) > 6
 );
 
 /* Returns:
 
 `{
-  // @foo bar=5
-  "example": "...",
+	// @foo bar=5
+	"example": "...",
 
-  // @foo bar=7
-  // "object": {
-  //   "example": "..."
-  // },
+	// @foo bar=7
+	// "object": {
+	//   "example": "..."
+	// },
 
-  // @baz bar=7
-  "notCommented": "..."
+	// @baz bar=7
+	"notCommented": "..."
 }`
 
 */
@@ -168,13 +168,13 @@ If omitted, all sections will be uncommented.
 import { uncomment } from "jsonc-pragma";
 
 const contents = `{
-  // @foo bar=5
-  // "example": "...",
+	// @foo bar=5
+	// "example": "...",
 
-  // @foo bar=7
-  // "object": {
-  //   "example": "..."
-  // }
+	// @foo bar=7
+	// "object": {
+	//   "example": "..."
+	// }
 }`;
 
 uncomment(contents, section => Number(section.args.bar) > 6);
@@ -182,13 +182,13 @@ uncomment(contents, section => Number(section.args.bar) > 6);
 /* Returns:
 
 `{
-  // @foo bar=5
-  // "example": "...",
+	// @foo bar=5
+	// "example": "...",
 
-  // @foo bar=7
-  "object": {
-    "example": "..."
-  }
+	// @foo bar=7
+	"object": {
+		"example": "..."
+	}
 }`
 
 */
@@ -200,9 +200,9 @@ uncomment(contents, section => Number(section.args.bar) > 6);
 
 ```ts
 interface ISection {
-  start: number;
-  end: number;
-  args: { [key: string]: string | undefined };
-  name: string;
+	start: number;
+	end: number;
+	args: { [key: string]: string | undefined };
+	name: string;
 }
 ```
