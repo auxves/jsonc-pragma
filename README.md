@@ -4,7 +4,7 @@
 	<p>A simple, yet powerful pragma analyzer and utility library for JSON with Comments</p>
 	<p>
 		<a href="https://github.com/arnohovhannisyan/jsonc-pragma/actions">
-			<img src="https://img.shields.io/github/workflow/status/arnohovhannisyan/jsonc-pragma/CI" alt="CI">
+			<img src="https://img.shields.io/github/workflow/status/arnohovhannisyan/jsonc-pragma/Tests" alt="Tests">
 		</a>
 		<a href="https://npmjs.com/package/jsonc-pragma">
 			<img src="https://img.shields.io/npm/v/jsonc-pragma" alt="Version">
