@@ -1,4 +1,4 @@
-import { comment } from "~/utilities/comment";
+import { comment } from "../utilities/comment";
 
 test("basic functionality", () => {
 	const input = `{

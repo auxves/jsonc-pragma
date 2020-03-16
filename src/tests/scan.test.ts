@@ -1,4 +1,4 @@
-import { scan } from "~/utilities/scan";
+import { scan } from "../utilities/scan";
 
 test("basic functionality", () => {
 	const input = `{

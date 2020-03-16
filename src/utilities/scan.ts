@@ -1,6 +1,7 @@
 import matchBracket from "match-bracket";
 import { URLSearchParams } from "url";
-import { IArguments, ISection } from "~/models";
+import { ISection } from "../models/section";
+import { IArguments } from "../models/arguments";
 
 function getArgs(match: string | null): IArguments {
 	if (!match) return {};
@@ -23,10 +24,10 @@ function isRegular(line: string) {
 /**
  * @param contents The contents of your JSON file
  */
-export function scan(contents: string | Buffer): ISection[] {
+export function scan(contents: string): ISection[] {
 	const pragmaRegex = /\s*\/\/\s@(?<name>[a-zA-Z\d]+)(\s(?<args>.*))?$/;
 
-	const lines = contents.toString().split("\n");
+	const lines = contents.split("\n");
 
 	const linesWithPragmas = lines.filter(line => pragmaRegex.test(line));
 
@@ -34,7 +35,9 @@ export function scan(contents: string | Buffer): ISection[] {
 		const startingLineNumber = lines.indexOf(line) + 1;
 		const startingLine = lines[startingLineNumber];
 
-		const groups = pragmaRegex.exec(line)?.groups ?? { args: null, name: "" };
+		const match = pragmaRegex.exec(line)!;
+
+		const groups = match.groups ? match.groups : { args: null, name: "" };
 
 		if (isRegular(startingLine)) {
 			return {

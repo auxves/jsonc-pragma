@@ -1,9 +1,8 @@
 # Folders
 
-.cache
 coverage
 node_modules
-dist
+pkg
 
 # Files
 
