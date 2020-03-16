@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish
+        run: cd pkg && yarn publish --non-interactive
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
