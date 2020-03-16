@@ -1,4 +1,4 @@
-import { uncomment } from "~/utilities/uncomment";
+import { uncomment } from "../utilities/uncomment";
 
 test("basic functionality", () => {
 	const input = `{

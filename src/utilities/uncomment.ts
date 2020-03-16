@@ -1,12 +1,12 @@
-import { ISection } from "~/models";
-import { scan } from "~/utilities/scan";
+import { ISection } from "../models/section";
+import { scan } from "./scan";
 
 /**
  * @param contents The contents of your JSON file
  * @param selector A function that accepts a section and determines if it should be uncommented by returning true (uncomment) or false (don't uncomment).
  */
 export function uncomment(
-	contents: string | Buffer,
+	contents: string,
 	selector: (section: ISection) => boolean = () => true
 ): string {
 	const sections = scan(contents.toString().replace(/\/\/\s(?!@)/g, ""));
@@ -14,7 +14,6 @@ export function uncomment(
 	const sectionsToUncomment = sections.filter(selector);
 
 	const uncommented = contents
-		.toString()
 		.split("\n")
 		.map((line, i) => {
 			const shouldUncomment = sectionsToUncomment.some(

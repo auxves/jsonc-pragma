@@ -1,4 +1,4 @@
-import { IArguments } from "~/models/arguments";
+import { IArguments } from "./arguments";
 
 export interface ISection {
 	start: number;
