@@ -3,8 +3,8 @@
 	<h1>jsonc-pragma</h1>
 	<p>A simple, yet powerful pragma analyzer and utility library for JSON with Comments</p>
 	<p>
-		<a href="https://travis-ci.com/arnohovhannisyan/jsonc-pragma">
-			<img src="https://img.shields.io/travis/com/arnohovhannisyan/jsonc-pragma" alt="Travis">
+		<a href="https://github.com/arnohovhannisyan/jsonc-pragma/actions">
+			<img src="https://img.shields.io/github/workflow/status/arnohovhannisyan/jsonc-pragma/CI" alt="CI">
 		</a>
 		<a href="https://npmjs.com/package/jsonc-pragma">
 			<img src="https://img.shields.io/npm/v/jsonc-pragma" alt="Version">
