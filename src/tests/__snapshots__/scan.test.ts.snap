@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arguments with spaces 1`] = `1`;
+
+exports[`arguments with spaces 2`] = `
+Object {
+  "bar": "arg with spaces!",
+  "baz": "6",
+}
+`;
+
+exports[`arguments with spaces 3`] = `"foo"`;
+
+exports[`arguments with spaces 4`] = `2`;
+
+exports[`arguments with spaces 5`] = `2`;
+
+exports[`arrays 1`] = `1`;
+
+exports[`arrays 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`arrays 3`] = `"foo"`;
+
+exports[`arrays 4`] = `2`;
+
+exports[`arrays 5`] = `4`;
+
+exports[`arrays 6`] = `1`;
+
+exports[`arrays 7`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`arrays 8`] = `"foo"`;
+
+exports[`arrays 9`] = `3`;
+
+exports[`arrays 10`] = `3`;
+
+exports[`basic functionality 1`] = `1`;
+
+exports[`basic functionality 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`basic functionality 3`] = `"foo"`;
+
+exports[`basic functionality 4`] = `2`;
+
+exports[`basic functionality 5`] = `2`;
+
+exports[`empty pragma 1`] = `0`;
+
+exports[`multiple arguments 1`] = `1`;
+
+exports[`multiple arguments 2`] = `
+Object {
+  "bar": "5",
+  "baz": "6",
+}
+`;
+
+exports[`multiple arguments 3`] = `"foo"`;
+
+exports[`multiple arguments 4`] = `2`;
+
+exports[`multiple arguments 5`] = `2`;
+
+exports[`multiple pragmas 1`] = `2`;
+
+exports[`multiple pragmas 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`multiple pragmas 3`] = `"foo"`;
+
+exports[`multiple pragmas 4`] = `
+Object {
+  "bar": "10",
+}
+`;
+
+exports[`multiple pragmas 5`] = `"baz"`;
+
+exports[`multiple pragmas 6`] = `2`;
+
+exports[`multiple pragmas 7`] = `2`;
+
+exports[`multiple pragmas 8`] = `5`;
+
+exports[`multiple pragmas 9`] = `5`;
+
+exports[`nested arrays 1`] = `1`;
+
+exports[`nested arrays 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`nested arrays 3`] = `"foo"`;
+
+exports[`nested arrays 4`] = `2`;
+
+exports[`nested arrays 5`] = `6`;
+
+exports[`nested arrays 6`] = `1`;
+
+exports[`nested arrays 7`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`nested arrays 8`] = `"foo"`;
+
+exports[`nested arrays 9`] = `3`;
+
+exports[`nested arrays 10`] = `5`;
+
+exports[`nested objects 1`] = `1`;
+
+exports[`nested objects 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`nested objects 3`] = `"foo"`;
+
+exports[`nested objects 4`] = `2`;
+
+exports[`nested objects 5`] = `6`;
+
+exports[`nested objects 6`] = `1`;
+
+exports[`nested objects 7`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`nested objects 8`] = `"foo"`;
+
+exports[`nested objects 9`] = `3`;
+
+exports[`nested objects 10`] = `5`;
+
+exports[`no arguments 1`] = `1`;
+
+exports[`no arguments 2`] = `Object {}`;
+
+exports[`no arguments 3`] = `"foo"`;
+
+exports[`no arguments 4`] = `2`;
+
+exports[`no arguments 5`] = `2`;
+
+exports[`non-alphanumeric pragma 1`] = `0`;
+
+exports[`numeric pragma 1`] = `1`;
+
+exports[`numeric pragma 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`numeric pragma 3`] = `"1"`;
+
+exports[`object in array 1`] = `1`;
+
+exports[`object in array 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`object in array 3`] = `"foo"`;
+
+exports[`object in array 4`] = `3`;
+
+exports[`object in array 5`] = `5`;
+
+exports[`objects 1`] = `1`;
+
+exports[`objects 2`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`objects 3`] = `"foo"`;
+
+exports[`objects 4`] = `2`;
+
+exports[`objects 5`] = `4`;
+
+exports[`objects 6`] = `1`;
+
+exports[`objects 7`] = `
+Object {
+  "bar": "5",
+}
+`;
+
+exports[`objects 8`] = `"foo"`;
+
+exports[`objects 9`] = `3`;
+
+exports[`objects 10`] = `3`;

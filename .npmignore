@@ -11,6 +11,5 @@ scripts
 *.log
 .prettierrc
 .gitignore
-.travis.yml
 tsconfig.json
 yarn.lock

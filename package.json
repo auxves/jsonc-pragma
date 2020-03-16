@@ -9,7 +9,8 @@
 		"start": "microbundle watch --target node -f cjs",
 		"build": "microbundle --target node --no-sourcemap --compress -f cjs && yarn types",
 		"types": "tsc -p . -m amd -d --out types/main.js && shx cp types/main.d.ts dist && shx rm -rf types && node scripts/postprocess.js",
-		"test": "xo 'src/**/*' && jest"
+		"lint": "xo 'src/**/*'",
+		"test": "jest"
 	},
 	"dependencies": {
 		"match-bracket": "^1.0.0"

@@ -8,13 +8,13 @@ test("basic functionality", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(1);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({ bar: "5" });
-	expect(output[0].name).toBe("foo");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 
-	expect(output[0].start).toBe(2);
-	expect(output[0].end).toBe(2);
+	expect(output[0].start).toMatchSnapshot();
+	expect(output[0].end).toMatchSnapshot();
 });
 
 test("empty pragma", () => {
@@ -25,7 +25,7 @@ test("empty pragma", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(0);
+	expect(output.length).toMatchSnapshot();
 });
 
 test("non-alphanumeric pragma", () => {
@@ -36,7 +36,7 @@ test("non-alphanumeric pragma", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(0);
+	expect(output.length).toMatchSnapshot();
 });
 
 test("numeric pragma", () => {
@@ -47,10 +47,10 @@ test("numeric pragma", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(1);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({ bar: "5" });
-	expect(output[0].name).toBe("1");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 });
 
 test("multiple arguments", () => {
@@ -61,13 +61,13 @@ test("multiple arguments", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(1);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({ bar: "5", baz: "6" });
-	expect(output[0].name).toBe("foo");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 
-	expect(output[0].start).toBe(2);
-	expect(output[0].end).toBe(2);
+	expect(output[0].start).toMatchSnapshot();
+	expect(output[0].end).toMatchSnapshot();
 });
 
 test("arguments with spaces", () => {
@@ -78,13 +78,13 @@ test("arguments with spaces", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(1);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({ bar: "arg with spaces!", baz: "6" });
-	expect(output[0].name).toBe("foo");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 
-	expect(output[0].start).toBe(2);
-	expect(output[0].end).toBe(2);
+	expect(output[0].start).toMatchSnapshot();
+	expect(output[0].end).toMatchSnapshot();
 });
 
 test("no arguments", () => {
@@ -95,13 +95,13 @@ test("no arguments", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(1);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({});
-	expect(output[0].name).toBe("foo");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 
-	expect(output[0].start).toBe(2);
-	expect(output[0].end).toBe(2);
+	expect(output[0].start).toMatchSnapshot();
+	expect(output[0].end).toMatchSnapshot();
 });
 
 test("multiple pragmas", () => {
@@ -115,19 +115,19 @@ test("multiple pragmas", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(2);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({ bar: "5" });
-	expect(output[0].name).toBe("foo");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 
-	expect(output[1].args).toStrictEqual({ bar: "10" });
-	expect(output[1].name).toBe("baz");
+	expect(output[1].args).toMatchSnapshot();
+	expect(output[1].name).toMatchSnapshot();
 
-	expect(output[0].start).toBe(2);
-	expect(output[0].end).toBe(2);
+	expect(output[0].start).toMatchSnapshot();
+	expect(output[0].end).toMatchSnapshot();
 
-	expect(output[1].start).toBe(5);
-	expect(output[1].end).toBe(5);
+	expect(output[1].start).toMatchSnapshot();
+	expect(output[1].end).toMatchSnapshot();
 });
 
 test("objects", () => {
@@ -141,13 +141,13 @@ test("objects", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(2);
-		expect(output[0].end).toBe(4);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 
 	{
@@ -160,13 +160,13 @@ test("objects", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(3);
-		expect(output[0].end).toBe(3);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 });
 
@@ -181,13 +181,13 @@ test("arrays", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(2);
-		expect(output[0].end).toBe(4);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 
 	{
@@ -200,13 +200,13 @@ test("arrays", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(3);
-		expect(output[0].end).toBe(3);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 });
 
@@ -223,13 +223,13 @@ test("nested objects", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(2);
-		expect(output[0].end).toBe(6);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 
 	{
@@ -244,13 +244,13 @@ test("nested objects", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(3);
-		expect(output[0].end).toBe(5);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 });
 
@@ -267,13 +267,13 @@ test("nested arrays", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(2);
-		expect(output[0].end).toBe(6);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 
 	{
@@ -288,13 +288,13 @@ test("nested arrays", () => {
 
 		const output = scan(input);
 
-		expect(output.length).toBe(1);
+		expect(output.length).toMatchSnapshot();
 
-		expect(output[0].args).toStrictEqual({ bar: "5" });
-		expect(output[0].name).toBe("foo");
+		expect(output[0].args).toMatchSnapshot();
+		expect(output[0].name).toMatchSnapshot();
 
-		expect(output[0].start).toBe(3);
-		expect(output[0].end).toBe(5);
+		expect(output[0].start).toMatchSnapshot();
+		expect(output[0].end).toMatchSnapshot();
 	}
 });
 
@@ -313,11 +313,11 @@ test("object in array", () => {
 
 	const output = scan(input);
 
-	expect(output.length).toBe(1);
+	expect(output.length).toMatchSnapshot();
 
-	expect(output[0].args).toStrictEqual({ bar: "5" });
-	expect(output[0].name).toBe("foo");
+	expect(output[0].args).toMatchSnapshot();
+	expect(output[0].name).toMatchSnapshot();
 
-	expect(output[0].start).toBe(3);
-	expect(output[0].end).toBe(5);
+	expect(output[0].start).toMatchSnapshot();
+	expect(output[0].end).toMatchSnapshot();
 });

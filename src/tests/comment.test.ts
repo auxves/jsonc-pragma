@@ -6,12 +6,7 @@ test("basic functionality", () => {
 		"key": true
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		// "key": true
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("multiple pragmas", () => {
@@ -23,15 +18,7 @@ test("multiple pragmas", () => {
 		"key": true
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		// "key": true,
-
-		// @baz bar=10
-		// "key": true
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("selectors", () => {
@@ -43,17 +30,9 @@ test("selectors", () => {
 		"key": true
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		"key": true,
-
-		// @foo bar=10
-		// "key": true
-	}`;
-
-	expect(comment(input, section => Number(section.args.bar) > 5)).toBe(
-		expected
-	);
+	expect(
+		comment(input, section => Number(section.args.bar) > 5)
+	).toMatchSnapshot();
 });
 
 test("objects", () => {
@@ -64,14 +43,7 @@ test("objects", () => {
 		}
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		// "key": {
-		// 	"key": true
-		// }
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("arrays", () => {
@@ -82,14 +54,7 @@ test("arrays", () => {
 		]
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		// "key": [
-		// 	{ "key": true }
-		// ]
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("nested objects", () => {
@@ -103,16 +68,7 @@ test("nested objects", () => {
 			}
 		}`;
 
-		const expected = `{
-			// @foo bar=5
-			// "key": {
-			// 	"key": {
-			// 		"key": true
-			// 	}
-			// }
-		}`;
-
-		expect(comment(input)).toBe(expected);
+		expect(comment(input)).toMatchSnapshot();
 	}
 
 	{
@@ -125,16 +81,7 @@ test("nested objects", () => {
 			}
 		}`;
 
-		const expected = `{
-			"key": {
-				// @foo bar=5
-				// "key": {
-				// 	"key": true
-				// }
-			}
-		}`;
-
-		expect(comment(input)).toBe(expected);
+		expect(comment(input)).toMatchSnapshot();
 	}
 });
 
@@ -149,16 +96,7 @@ test("nested arrays", () => {
 			]
 		}`;
 
-		const expected = `{
-			// @foo bar=5
-			// "key": [
-			// 	[
-			// 		{ "key": true }
-			// 	]
-			// ]
-		}`;
-
-		expect(comment(input)).toBe(expected);
+		expect(comment(input)).toMatchSnapshot();
 	}
 
 	{
@@ -171,16 +109,7 @@ test("nested arrays", () => {
 			]
 		}`;
 
-		const expected = `{
-			"key": [
-				// @foo bar=5
-				// [
-				// 	{ "key": true }
-				// ]
-			]
-		}`;
-
-		expect(comment(input)).toBe(expected);
+		expect(comment(input)).toMatchSnapshot();
 	}
 });
 
@@ -197,19 +126,7 @@ test("object in array", () => {
 		]
 	}`;
 
-	const expected = `{
-		"key": [
-			// @foo bar=5
-			// {
-			// 	"key": true
-			// },
-			{
-				"key": true
-			}
-		]
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("partially commented", () => {
@@ -221,15 +138,7 @@ test("partially commented", () => {
 		"key2": false
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		// "key": true,
-
-		// @foo bar=6
-		// "key2": false
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("mixed indentation", () => {
@@ -243,17 +152,7 @@ test("mixed indentation", () => {
 			]
 	}`;
 
-	const expected = `{
-		// @foo bar=5
-		// "key": true,
-
-			// @foo bar=6
-			// "key2": [
-			// 	{ "key": true }
-			// ]
-	}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });
 
 test("no indentation", () => {
@@ -267,15 +166,5 @@ test("no indentation", () => {
 ]
 }`;
 
-	const expected = `{
-// @foo bar=5
-// "key": true,
-
-// @foo bar=6
-// "key2": [
-// { "key": true }
-// ]
-}`;
-
-	expect(comment(input)).toBe(expected);
+	expect(comment(input)).toMatchSnapshot();
 });

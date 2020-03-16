@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrays 1`] = `
+"{
+		// @foo bar=5
+		// \\"key\\": [
+		// 	{ \\"key\\": true }
+		// ]
+	}"
+`;
+
+exports[`basic functionality 1`] = `
+"{
+		// @foo bar=5
+		// \\"key\\": true
+	}"
+`;
+
+exports[`mixed indentation 1`] = `
+"{
+		// @foo bar=5
+		// \\"key\\": true,
+
+			// @foo bar=6
+			// \\"key2\\": [
+			// 	{ \\"key\\": true }
+			// ]
+	}"
+`;
+
+exports[`multiple pragmas 1`] = `
+"{
+		// @foo bar=5
+		// \\"key\\": true,
+
+		// @baz bar=10
+		// \\"key\\": true
+	}"
+`;
+
+exports[`nested arrays 1`] = `
+"{
+			// @foo bar=5
+			// \\"key\\": [
+			// 	[
+			// 		{ \\"key\\": true }
+			// 	]
+			// ]
+		}"
+`;
+
+exports[`nested arrays 2`] = `
+"{
+			\\"key\\": [
+				// @foo bar=5
+				// [
+				// 	{ \\"key\\": true }
+				// ]
+			]
+		}"
+`;
+
+exports[`nested objects 1`] = `
+"{
+			// @foo bar=5
+			// \\"key\\": {
+			// 	\\"key\\": {
+			// 		\\"key\\": true
+			// 	}
+			// }
+		}"
+`;
+
+exports[`nested objects 2`] = `
+"{
+			\\"key\\": {
+				// @foo bar=5
+				// \\"key\\": {
+				// 	\\"key\\": true
+				// }
+			}
+		}"
+`;
+
+exports[`no indentation 1`] = `
+"{
+// @foo bar=5
+// \\"key\\": true,
+
+// @foo bar=6
+// \\"key2\\": [
+// { \\"key\\": true }
+// ]
+}"
+`;
+
+exports[`object in array 1`] = `
+"{
+		\\"key\\": [
+			// @foo bar=5
+			// {
+			// 	\\"key\\": true
+			// },
+			{
+				\\"key\\": true
+			}
+		]
+	}"
+`;
+
+exports[`objects 1`] = `
+"{
+		// @foo bar=5
+		// \\"key\\": {
+		// 	\\"key\\": true
+		// }
+	}"
+`;
+
+exports[`partially commented 1`] = `
+"{
+		// @foo bar=5
+		// \\"key\\": true,
+
+		// @foo bar=6
+		// \\"key2\\": false
+	}"
+`;
+
+exports[`selectors 1`] = `
+"{
+		// @foo bar=5
+		\\"key\\": true,
+
+		// @foo bar=10
+		// \\"key\\": true
+	}"
+`;
