@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basic functionality 1`] = `
+Object {
+  "abc": "5",
+}
+`;
+
+exports[`basic functionality 2`] = `
+Object {
+  "abc": "hello",
+}
+`;
+
+exports[`basic functionality 3`] = `Object {}`;

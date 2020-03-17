@@ -22,9 +22,7 @@ export function scan(contents: string): ISection[] {
 		const startingLineNumber = lines.indexOf(line) + 1;
 		const startingLine = lines[startingLineNumber];
 
-		const match = pragmaRegex.exec(line)!;
-
-		const groups = match.groups ? match.groups : { args: null, name: "" };
+		const groups = pragmaRegex.exec(line)!.groups!;
 
 		if (isRegular(startingLine)) {
 			return {
