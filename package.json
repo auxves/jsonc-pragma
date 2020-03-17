@@ -1,6 +1,6 @@
 {
 	"name": "jsonc-pragma",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "A simple, yet powerful pragma analyzer and utility library for JSON with Comments",
 	"license": "MIT",
 	"scripts": {
