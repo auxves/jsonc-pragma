@@ -1,5 +1,6 @@
 {
 	"prettier": true,
+	"envs": ["es2020", "browser"],
 	"extends": ["plugin:jest/recommended", "plugin:jest/style"],
 	"rules": {
 		"unicorn/filename-case": 0,

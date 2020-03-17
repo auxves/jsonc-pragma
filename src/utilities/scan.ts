@@ -1,19 +1,6 @@
 import matchBracket from "match-bracket";
-import { URLSearchParams } from "url";
 import { ISection } from "../models/section";
-import { IArguments } from "../models/arguments";
-
-function getArgs(match: string | null): IArguments {
-	if (!match) return {};
-
-	return [...new URLSearchParams(match.replace(/\s(\w*?=)/, "&$1"))].reduce(
-		(acc, [key, value]) => ({
-			...acc,
-			[key]: value
-		}),
-		{}
-	);
-}
+import { parseArgs } from "./parseArgs";
 
 function isRegular(line: string) {
 	if (/[{[]$/.test(line.trim())) return false;
@@ -43,7 +30,7 @@ export function scan(contents: string): ISection[] {
 			return {
 				start: startingLineNumber,
 				end: startingLineNumber,
-				args: getArgs(groups.args),
+				args: parseArgs(groups.args),
 				name: groups.name
 			};
 		}
@@ -59,7 +46,7 @@ export function scan(contents: string): ISection[] {
 		return {
 			start: startingLineNumber,
 			end: endingLineNumber,
-			args: getArgs(groups.args),
+			args: parseArgs(groups.args),
 			name: groups.name
 		};
 	});
