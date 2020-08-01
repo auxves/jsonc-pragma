@@ -17,16 +17,16 @@
 		"@pika/plugin-build-web": "^0.9.2",
 		"@pika/plugin-bundle-web": "^0.9.2",
 		"@pika/plugin-ts-standard-pkg": "^0.9.2",
-		"@types/jest": "^25.1.4",
-		"codecov": "^3.6.5",
-		"eslint-plugin-jest": "^23.8.2",
-		"jest": "^25.1.0",
+		"@types/jest": "^26.0.8",
+		"codecov": "^3.7.2",
+		"eslint-plugin-jest": "^23.20.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"jest": "^26.2.2",
 		"pika-plugin-package.json": "^1.0.2",
-		"prettier": "^1.19.1",
-		"shx": "^0.3.2",
-		"ts-jest": "^25.2.1",
-		"typescript": "^3.8.3",
-		"xo": "^0.28.0"
+		"prettier": "^2.0.5",
+		"ts-jest": "^26.1.4",
+		"typescript": "^3.9.7",
+		"xo": "^0.32.1"
 	},
 	"@pika/pack": {
 		"pipeline": [
@@ -66,5 +66,16 @@
 	"jest": {
 		"preset": "ts-jest",
 		"testEnvironment": "node"
+	},
+	"xo": {
+		"prettier": true,
+		"envs": [
+			"es2020",
+			"browser"
+		],
+		"extends": [
+			"plugin:jest/recommended",
+			"plugin:jest/style"
+		]
 	}
 }

@@ -11,7 +11,7 @@ export function uncomment(
 ): string {
 	const sections = scan(contents.toString().replace(/\/\/\s(?!@)/g, ""));
 
-	const sectionsToUncomment = sections.filter(selector);
+	const sectionsToUncomment = sections.filter(section => selector(section));
 
 	const uncommented = contents
 		.split("\n")

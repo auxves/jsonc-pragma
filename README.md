@@ -1,5 +1,4 @@
 <div align="center">
-	<!-- <img width="200" src="assets/logo.png"> -->
 	<h1>jsonc-pragma</h1>
 	<p>A simple, yet powerful pragma analyzer and utility library for JSON with Comments</p>
 	<p>

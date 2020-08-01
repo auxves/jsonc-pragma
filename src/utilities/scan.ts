@@ -1,11 +1,19 @@
 import matchBracket from "match-bracket";
+import { IArguments } from "../models/arguments";
 import { ISection } from "../models/section";
-import { parseArgs } from "./parseArgs";
 
 function isRegular(line: string) {
 	if (/[{[]$/.test(line.trim())) return false;
 
 	return true;
+}
+
+function parseArgs(match?: string): IArguments {
+	if (!match) return {};
+
+	return Object.fromEntries([
+		...new URLSearchParams(match.replace(/\s(\w*?=)/, "&$1"))
+	]);
 }
 
 /**

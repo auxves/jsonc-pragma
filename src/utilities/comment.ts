@@ -11,7 +11,7 @@ export function comment(
 ): string {
 	const sections = scan(contents);
 
-	const sectionsToComment = sections.filter(selector);
+	const sectionsToComment = sections.filter(section => selector(section));
 
 	const lines = contents.split("\n");
 
