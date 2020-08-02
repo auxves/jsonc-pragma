@@ -35,7 +35,7 @@ $ npm install jsonc-pragma
 
 #### `@param` contents
 
-Type: `string | Buffer`
+Type: `string`
 
 This is the contents of the JSON document.
 
@@ -86,7 +86,7 @@ Array<ISection>
 
 #### `@param` contents
 
-Type: `string | Buffer`
+Type: `string`
 
 This is the contents of the JSON document.
 
@@ -147,7 +147,7 @@ comment(
 
 #### `@param` contents
 
-Type: `string | Buffer`
+Type: `string`
 
 This is the contents of the JSON document.
 
